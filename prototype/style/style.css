@@ -309,20 +309,21 @@ float: left;
         border:1px solid  #666666;
         border-spacing:5px;/*cellspacing:poor IE support for  this*/
        /* border-collapse:separate;*/
+align:"center";
     }
 
     .divRow
     {
        display:table-row;
        width:auto;
-
+align:"center";
     }
 
     .divCell
     {
         float:left;/*fix for  buggy browsers*/
         display:table-column;
-        width:200px;
+        width:125px;
         background-color:#ccc;
-
+	align:"center";
     }
