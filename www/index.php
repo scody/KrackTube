@@ -12,9 +12,11 @@ Released   : 20120712
 -->
 
 
+<?php include 'KrackProperties.php'; ?>
+
+
+
 <?php
-
-
 
 //connection to the database
 $dbhandle = mysql_connect($hostname, $username, $password)
@@ -103,14 +105,14 @@ while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 						<div class="vidTitleSection">
 							<h3>Runner's Up...</h3>
 							<div class="vidTitleVotes">
-								<ul class="list">
+								<ul class="list" id="titles<?php printf("%s",$row[3]); ?>">
 <?php
 
 $result2 = mysql_query("SELECT titles.title_id, titles.title, titles.c_user from titles where titles.media_id=" . $row[3] . " order by titles.curr_votes desc");
 while ($row2 = mysql_fetch_array($result2, MYSQL_NUM))
 {
 ?>
-	<li><span class="button"><a href="#" onClick="vote('<?php printf("%s",$row2[0]); ?>');">vote</a></span>&nbsp;&nbsp;<?php printf("%s",$row2[1]); ?> <div class="createdUser">-<?php printf("%s",$row2[2]); ?></div></li>
+	<!--li><span class="button"><a href="#" onClick="vote('<?php printf("%s",$row2[0]); ?>');">vote</a></span>&nbsp;&nbsp;<?php printf("%s",$row2[1]); ?> <div class="createdUser">-<?php printf("%s",$row2[2]); ?></div></li-->
 <?php
 }
 ?>
@@ -152,10 +154,13 @@ function changeVid(container) {
 changeVid("#vid1");
 
 
-function vote(titleId){
+function vote(titleId, media_id){
 	$.post('/vote.php?title_id=' + titleId, function(data) {
   		$('.result').html(data);
 	});
+
+	populateTitles(media_id);
+
 }
 
 
@@ -165,14 +170,32 @@ function submitTitle(media_id){
 	$.post('/submittitle.php?title=' + text + '&media_id=' + media_id, function(data) {
   		$('.result').html(data);
 	});
+
+        populateTitles(media_id);
 }
 
-</script>
+
+function populateTitles(media_id){
+
+	$.post('/getTitles.php?&media_id=' + media_id, function(data) {
+  		$('#titles' + media_id).html(data);
+	});
+}
+
+
 
 <?php
+    mysql_data_seek($result,0);
+
+while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+
+	echo("populateTitles(\"" . $row[3] . "\");");
+}
+
     mysql_free_result($result);
-mysql_free_result($result2);
+    mysql_free_result($result2);
 ?>
+</script>
 
 
 </html>

@@ -16,5 +16,5 @@ $dbhandle = mysql_connect($hostname, $username, $password)
 
 mysql_select_db("sbobonet_kracktube", $dbhandle) or die(mysql_error());
 echo ($result = mysql_query("insert into titles (c_user,title,media_id) values(\"Steve\",\"" . $title . "\",$media_id);");
-'$result = mysql_query("insert into titles (c_user,title,media_id) values(\"Steve\",\"" . $title . "\",$media_id);";
+
 ?>

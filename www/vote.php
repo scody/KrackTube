@@ -1,13 +1,9 @@
-
+<?php include 'KrackProperties.php'; ?>
 
 
 
 <?php
 $title_id=$_GET["title_id"];
-
-$username = "sbobonet";
-$password = "Zndrtsui!!2";
-$hostname = "box458.bluehost.com"; 
 
 //connection to the database
 $dbhandle = mysql_connect($hostname, $username, $password)
