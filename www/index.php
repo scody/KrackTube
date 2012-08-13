@@ -145,11 +145,13 @@ changeVid("#vid1");
 
 
 function vote(titleId, media_id){
-	$.post('/\vote.php?title_id=' + titleId, function(data) {
+
+	$.post('vote.php?title_id=' + titleId, function(data) {
   		$('.result').html(data);
+                populateTitles(media_id);
 	});
 
-	populateTitles(media_id);
+	
 
 }
 
@@ -159,9 +161,9 @@ function submitTitle(media_id){
 	var text = $('#titleText'+media_id).val();
 	$.post('submittitle.php?title=' + text + '&media_id=' + media_id, function(data) {
   		$('.result').html(data);
+                populateTitles(media_id);
 	});
 
-        populateTitles(media_id);
 }
 
 
