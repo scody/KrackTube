@@ -30,7 +30,7 @@ $result = mysql_query("SELECT media.x_media_id AS m_id, outtertit.title title, o
 " WHERE outtertit.curr_votes = (" .
 " SELECT MAX( innertit.curr_votes )" .
 " FROM titles AS innertit" .
-" WHERE innertit.media_id = outtertit.media_id ) order by media.c_date asc limit 10" );
+" WHERE innertit.media_id = outtertit.media_id ) order by media.c_date asc limit 15" );
 ?>
 
 
@@ -79,7 +79,7 @@ $result = mysql_query("SELECT media.x_media_id AS m_id, outtertit.title title, o
 							<?php
 
 							while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-							    printf("<li><a href='#' onClick='changeVid(\"#%s\")'>%s</a>", $row[0],$row[1]);  
+							    printf("<li><a href='#' onClick='changeVid(\"#%s\")'>%s</a>", $row[3],$row[1]);  
 							}
 							mysql_data_seek($result,0);
 
@@ -92,7 +92,7 @@ $result = mysql_query("SELECT media.x_media_id AS m_id, outtertit.title title, o
 while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 ?>
 				<div id="content" >
-					<div class="box hideable stopableVids" id="<?php printf("%s",$row[0]); ?>" >
+					<div class="box hideable stopableVids" id="<?php printf("%s",$row[3]); ?>" >
 						<div class="vidBody"><H2><?php printf("%s",$row[1]); ?></H2>
 							<iframe width="350" height="230"  src="http://www.youtube.com/embed/<?php printf("%s",$row[0]); ?>?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 							<div  class="vidFooter">
@@ -103,24 +103,14 @@ while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 							</div>	
 						</div>
 						<div class="vidTitleSection">
-							<h3>Runner's Up...</h3>
+							<h3>Runner Up Titles...</h3>
 							<div class="vidTitleVotes">
 								<ul class="list" id="titles<?php printf("%s",$row[3]); ?>">
-<?php
-
-$result2 = mysql_query("SELECT titles.title_id, titles.title, titles.c_user from titles where titles.media_id=" . $row[3] . " order by titles.curr_votes desc");
-while ($row2 = mysql_fetch_array($result2, MYSQL_NUM))
-{
-?>
-	<!--li><span class="button"><a href="#" onClick="vote('<?php printf("%s",$row2[0]); ?>');">vote</a></span>&nbsp;&nbsp;<?php printf("%s",$row2[1]); ?> <div class="createdUser">-<?php printf("%s",$row2[2]); ?></div></li-->
-<?php
-}
-?>
+								<!-- This is where the titles list will go -->
 								</ul>										
 							</div>	
 						</div>
 					</div>
-					
 				</div>
 
 <?php	
@@ -148,14 +138,14 @@ function changeVid(container) {
   $(".hideable").filter(":visible").toggle(easeRate);
   $(container).toggle(easeRate);
   currentVideo = container;
-  //alert(currentVideo);
+ 
 }
 
 changeVid("#vid1");
 
 
 function vote(titleId, media_id){
-	$.post('/vote.php?title_id=' + titleId, function(data) {
+	$.post('/\vote.php?title_id=' + titleId, function(data) {
   		$('.result').html(data);
 	});
 
@@ -167,7 +157,7 @@ function vote(titleId, media_id){
 function submitTitle(media_id){
 
 	var text = $('#titleText'+media_id).val();
-	$.post('/submittitle.php?title=' + text + '&media_id=' + media_id, function(data) {
+	$.post('submittitle.php?title=' + text + '&media_id=' + media_id, function(data) {
   		$('.result').html(data);
 	});
 
@@ -176,8 +166,7 @@ function submitTitle(media_id){
 
 
 function populateTitles(media_id){
-
-	$.post('/getTitles.php?&media_id=' + media_id, function(data) {
+	$.post('getTitles.php?&media_id=' + media_id, function(data) {
   		$('#titles' + media_id).html(data);
 	});
 }
@@ -193,8 +182,8 @@ while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 }
 
     mysql_free_result($result);
-    mysql_free_result($result2);
-?>
+
+?>    
 </script>
 
 
