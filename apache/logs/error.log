@@ -1,0 +1,27 @@
+[Sun Aug 12 03:50:48 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Sun Aug 12 03:55:38 2012] [notice] caught SIGTERM, shutting down
+[Sun Aug 12 03:55:39 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Sun Aug 12 03:57:24 2012] [notice] Graceful restart requested, doing restart
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+[Sun Aug 12 03:57:24 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Sun Aug 12 03:57:56 2012] [notice] caught SIGTERM, shutting down
+[Sun Aug 12 03:57:57 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Sun Aug 12 07:56:38 2012] [notice] Graceful restart requested, doing restart
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+[Sun Aug 12 07:56:38 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Sun Aug 12 11:43:13 2012] [notice] caught SIGTERM, shutting down
+[Sun Aug 12 11:43:14 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Mon Aug 13 10:54:14 2012] [notice] caught SIGTERM, shutting down
+[Mon Aug 13 13:02:05 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Sun Aug 19 07:36:37 2012] [notice] Graceful restart requested, doing restart
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+[Sun Aug 19 07:36:38 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Mon Aug 20 18:01:34 2012] [notice] caught SIGTERM, shutting down
+[Mon Aug 20 18:02:41 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Mon Aug 20 20:17:29 2012] [notice] Graceful restart requested, doing restart
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+[Mon Aug 20 20:17:29 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Mon Aug 20 20:23:02 2012] [notice] caught SIGTERM, shutting down
+[Mon Aug 20 20:23:50 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations
+[Tue Aug 21 08:46:08 2012] [notice] caught SIGTERM, shutting down
+[Tue Aug 21 08:47:03 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.2 with Suhosin-Patch configured -- resuming normal operations

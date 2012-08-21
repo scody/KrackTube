@@ -90,25 +90,20 @@ a {
 	margin: 0 0 0px 0;
 }
 
-.vidTitleVotes{ 
+.vidTitleVotes { 
 	background: light-grey; 
+
+	
 	width: 300px;
 	height:400px;
 	overflow-y:scroll;
 
 }
-
-
-
-
 .vidTitleSection {
 height:420px;
 width: 300px;
 float: right;	
 }
-
-
-
 
 .button,
 .button a,
@@ -124,16 +119,6 @@ float: right;
 float: left;
 
 }
-
-.titleFooter {
-	font-family: "Open Sans", sans-serif;
-	font-size: .7em;
-}
-.createddate {
-	font-family: "Open Sans", sans-serif;
-	font-size: .7em;
-}
-
 
 
 
@@ -163,10 +148,10 @@ float: left;
 
 #logo {
 	position: absolute;
-	top: 65px;
+	top: 40px;
 	left: 40px;
-	height: 90px;
-	line-height: 90px;
+	height: 130px;
+	line-height: 130px;
 }
 
 #logo a {
@@ -324,7 +309,6 @@ float: left;
         border:1px solid  #666666;
         border-spacing:5px;/*cellspacing:poor IE support for  this*/
        /* border-collapse:separate;*/
-align:"center";
     }
 
     .divRow

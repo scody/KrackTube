@@ -13,6 +13,8 @@ Released   : 20120712
 
 
 <?php include 'KrackProperties.php'; ?>
+<!--?php include 'twitteroauth/twitter_include.php'; ?-->
+
 
 
 
@@ -24,13 +26,13 @@ $dbhandle = mysql_connect($hostname, $username, $password)
 
 mysql_select_db("sbobonet_kracktube", $dbhandle) or die(mysql_error());
 
-$result = mysql_query("SELECT media.x_media_id AS m_id, outtertit.title title, outtertit.curr_votes, outtertit.media_id" .
+$result = mysql_query("SELECT media.x_media_id AS m_id, outtertit.title title, outtertit.curr_votes, outtertit.media_id, media.c_date, media.m_type" .
 " FROM media" .
 " LEFT JOIN titles AS outtertit ON media.media_id = outtertit.media_id" .
 " WHERE outtertit.curr_votes = (" .
 " SELECT MAX( innertit.curr_votes )" .
 " FROM titles AS innertit" .
-" WHERE innertit.media_id = outtertit.media_id ) order by media.c_date asc limit 15" );
+" WHERE innertit.media_id = outtertit.media_id ) order by media.c_date desc limit 15" );
 ?>
 
 
@@ -65,7 +67,7 @@ $result = mysql_query("SELECT media.x_media_id AS m_id, outtertit.title title, o
 					<br class="clearfix">
 				</div>
 			<div id="login">		
-					Login: Twitter | Facebook | Google
+					Login: <a href="twitteroauth/redirect.php"><img src="img/twitter_lighter.png"></a> | Facebook | Google
 			</div>
 			</div>
 
@@ -79,7 +81,7 @@ $result = mysql_query("SELECT media.x_media_id AS m_id, outtertit.title title, o
 							<?php
 
 							while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-							    printf("<li><a href='#' onClick='changeVid(\"#%s\")'>%s</a>", $row[3],$row[1]);  
+							    printf("<li><a href='#' onClick='changeVid(\"#%s\")'>%s</a><div class=\"createddate\">%s|%s</div></li>", $row[3],$row[1],$row[4], $row[5]);  
 							}
 							mysql_data_seek($result,0);
 
@@ -124,8 +126,12 @@ mysql_data_seek($result,0);
 		</div>
 
 		<div class="result">
-....
 		</div>
+
+<?php print_r("ScreenName: " . $content->{'screen_name'}); ?>
+<?php print_r($content); ?>
+
+
 </body>
 
 
@@ -184,6 +190,10 @@ while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 }
 
     mysql_free_result($result);
+
+
+
+
 
 ?>    
 </script>
