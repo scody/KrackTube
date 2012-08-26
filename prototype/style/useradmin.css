@@ -1,0 +1,50 @@
+#wrapper {
+    width: 978px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#header {
+	height: 130px;
+	padding: 20px;
+	background: url(../img/header_background.jpg) left top;
+	position: relative;
+}
+
+#logo {
+	height: 200px;
+	width: 200px;
+	background: url(../img/captitude_logo.png) left top no-repeat;
+}
+#message {
+	position: absolute;
+	top: 75px;
+	left: 25px;
+	height: 55px;
+	width: 250px;
+	font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+#alert {
+	position: absolute;
+	top: 20px;
+	left: 350px;
+	height: 65px;
+	width: 150px;
+	background-color: #f7f7f7;
+	font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	text-align: center;
+}
+
+#top-tabnav {
+	position: absolute;
+	top: 20px;
+	left: 550px;
+	height: 130px;
+	width: 410px; 
+	background: url(../img/top-navtab_gray.png) left top;	
+}
+#navigation {
+	color: gray;
+	font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
