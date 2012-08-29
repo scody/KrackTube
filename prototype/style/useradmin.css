@@ -34,6 +34,7 @@
 	background-color: #f7f7f7;
 	font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	text-align: center;
+	border-radius: 25px;
 }
 
 #top-tabnav {
@@ -42,9 +43,46 @@
 	left: 550px;
 	height: 130px;
 	width: 410px; 
-	background: url(../img/top-navtab_gray.png) left top;	
+	background: url(../img/top-navtab_gray.png) left top;
+	border-radius: 1em 4em 1em 4em;
 }
 #navigation {
 	color: gray;
 	font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	background: url(../img/top-navtab_gray.png) left top;
+}
+
+/* useradmin table style*/
+#divTable {
+	display: table;
+	margin-top: 5px;
+    width:700px;
+    background: url(../img/top-navtab_gray.png) left top;
+    border-spacing:5px;/*cellspacing:poor IE support for  this*/
+    /* border-collapse:separate;*/
+	align:"center";
+}
+
+#divRow {
+    display:table-row;
+    width:auto;
+	align:"center";
+}
+
+#divCell {
+   	float:left;/*fix for  buggy browsers*/
+    display:table-column;
+    width:125px;
+    background-color:#ccc;
+	align:"center";
+}
+
+#video {
+	position: absolute;
+	top: 198px;
+	left: 935px;
+	height: 177px;
+	width: 275px;
+	background: url(../img/top-navtab_gray.png) left top;
+	text-align:center;
 }
